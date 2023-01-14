@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu
+END
+SenuMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/SenuMenu.java
+END
+Contabilidad.form
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/Contabilidad.form
+END
+ProductoAutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/ProductoAutoCompleter.java
+END
+Compras.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/Compras.java
+END
+NumberLiteral.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/senu/!svn/ver/16/trunk/Senu/src/org/fabnun/senu/NumberLiteral.java
+END
+Notas.form
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/Notas.form
+END
+Clientes.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/Clientes.java
+END
+Factura.form
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/Factura.form
+END
+FacturasDeCliente.form
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/FacturasDeCliente.form
+END
+EscritorioConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/senu/!svn/ver/16/trunk/Senu/src/org/fabnun/senu/EscritorioConfig.java
+END
+Facturas.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/Facturas.java
+END
+CodigoAutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/CodigoAutoCompleter.java
+END
+NotaConfig.form
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/senu/!svn/ver/19/trunk/Senu/src/org/fabnun/senu/NotaConfig.form
+END
+SenuEscritorio.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/SenuEscritorio.java
+END
+RutAutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/RutAutoCompleter.java
+END
+ReparaDB.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/17/trunk/Senu/src/org/fabnun/senu/ReparaDB.java
+END
+PrintConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/PrintConfig.java
+END
+ComunaAutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/senu/!svn/ver/3/trunk/Senu/src/org/fabnun/senu/ComunaAutoCompleter.java
+END
+Compras.form
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/Compras.form
+END
+UserAdmin.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/UserAdmin.java
+END
+ClienteAutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/ClienteAutoCompleter.java
+END
+Clientes.form
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/Clientes.form
+END
+EgresoAutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/EgresoAutoCompleter.java
+END
+Facturas.form
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/Facturas.form
+END
+CiudadAutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/senu/!svn/ver/3/trunk/Senu/src/org/fabnun/senu/CiudadAutoCompleter.java
+END
+Producto.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/Producto.java
+END
+Model.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/Model.java
+END
+ReparaDB.form
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/17/trunk/Senu/src/org/fabnun/senu/ReparaDB.form
+END
+GiroAutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/senu/!svn/ver/3/trunk/Senu/src/org/fabnun/senu/GiroAutoCompleter.java
+END
+PrintConfig.form
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/PrintConfig.form
+END
+ObjectArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/senu/!svn/ver/4/trunk/Senu/src/org/fabnun/senu/ObjectArray.java
+END
+Login.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/Login.java
+END
+UserAdmin.form
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/senu/!svn/ver/16/trunk/Senu/src/org/fabnun/senu/UserAdmin.form
+END
+Contabilidad.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/Contabilidad.java
+END
+PrintModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/PrintModel.java
+END
+Producto.form
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/16/trunk/Senu/src/org/fabnun/senu/Producto.form
+END
+Constantes.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/Constantes.java
+END
+Notas.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/Notas.java
+END
+Factura.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/Factura.java
+END
+FacturasDeCliente.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/FacturasDeCliente.java
+END
+NotaConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/NotaConfig.java
+END
+Login.form
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/senu/!svn/ver/9/trunk/Senu/src/org/fabnun/senu/Login.form
+END

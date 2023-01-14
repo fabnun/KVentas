@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/senu/!svn/ver/20/trunk/Senu/lib
+END
+commons-pool-1.5.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/senu/!svn/ver/3/trunk/Senu/lib/commons-pool-1.5.4.jar
+END
+substance.jar
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/senu/!svn/ver/9/trunk/Senu/lib/substance.jar
+END
+trident.jar
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/senu/!svn/ver/9/trunk/Senu/lib/trident.jar
+END
+jxl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/senu/!svn/ver/20/trunk/Senu/lib/jxl.jar
+END
+commons-dbcp-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/senu/!svn/ver/3/trunk/Senu/lib/commons-dbcp-1.4.jar
+END
+postgresql-9.0-801.jdbc4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/senu/!svn/ver/13/trunk/Senu/lib/postgresql-9.0-801.jdbc4.jar
+END

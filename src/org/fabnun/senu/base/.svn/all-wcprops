@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/base
+END
+Test.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/senu/!svn/ver/3/trunk/Senu/src/org/fabnun/senu/base/Test.java
+END
+DBManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/base/DBManager.java
+END
+DBSenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/base/DBSenu.java
+END
+ODBCSenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/base/ODBCSenu.java
+END
+DBUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/senu/!svn/ver/6/trunk/Senu/src/org/fabnun/senu/base/DBUtil.java
+END
+DBUtil.form
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/senu/!svn/ver/6/trunk/Senu/src/org/fabnun/senu/base/DBUtil.form
+END
+Migracion.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/base/Migracion.java
+END

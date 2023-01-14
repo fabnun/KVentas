@@ -1,0 +1,93 @@
+package org.fabnun.senu;
+
+import java.awt.Image;
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import org.fabnun.senu.base.DBSenu;
+
+public class Constantes {
+
+    public static Date actualDate=new Date();
+    public static double PPM=0.026;
+    public static double iva=0.19;
+    public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    public static DecimalFormat decimalFormat;
+    public static DBSenu db = new DBSenu();
+    public static int fontSize = 12;
+    public static boolean dvEditable = false;
+    public static Icon ICON_USUARIO, ICON_FACTURA, ICON_CLIENTE, ICON_PAPELERA, ICON_FUENTES, ICON_NOTAS,
+            ICON_COLORES, ICON_FONDO, ICON_MODO, ICON_CONFIG, ICON_CALENDARIO, ICON_SENU,
+            ICON_IMPRESORA, ICON_BLOQUEADO, ICON_START, ICON_LOGIN, ICON_WARNING, ICON_EXIT,
+            ICON_NUEVA, ICON_BUSCAR, ICON_IMPRIMIR, ICON_ABONAR, ICON_ANULAR, ICON_ULTIMA,
+            ICON_ANTERIOR, ICON_SIGUIENTE, ICON_PRODUCTOS, ICON_REPORTES, ICON_FACTURAS, ICON_CHECK,
+            ICON_PAGADO, ICON_NOPAGADO, ICON_ANULADO, ICON_COTIZACION,ICON_CONTA,ICON_BACKUP;
+    public static Image IMG_MONITOR, IMG_USUARIO, IMG_PRINT, IMG_SENU;
+
+
+    private static Icon getIcon(String filename) {
+        return new ImageIcon(Constantes.class.getResource("iconos/" + filename));
+    }
+
+    private static Image getImage(String filename) throws IOException {
+        return ImageIO.read(Constantes.class.getResource("iconos/" + filename));
+    }
+
+    static {
+        DecimalFormatSymbols dformater_rules = new DecimalFormatSymbols();
+        dformater_rules.setDecimalSeparator(',');
+        dformater_rules.setGroupingSeparator('.');
+        decimalFormat = new DecimalFormat("###,###.###");
+        decimalFormat.setDecimalFormatSymbols(dformater_rules);
+        ICON_CONTA = getIcon("conta.png");
+        ICON_BACKUP = getIcon("backup.png");
+        ICON_PAGADO = getIcon("pagado.png");
+        ICON_NOPAGADO = getIcon("nopagado.png");
+        ICON_ANULADO = getIcon("anulado.png");
+        ICON_COTIZACION = getIcon("cotizacion.png");
+        ICON_FACTURA = getIcon("factura.png");
+        ICON_USUARIO = getIcon("system-users.png");
+        ICON_SENU = getIcon("senu.png");
+        ICON_NOTAS = getIcon("accessories-text-editor.png");
+        ICON_CLIENTE = getIcon("contact-new.png");
+        ICON_PAPELERA = getIcon("user-trash.png");
+        ICON_FUENTES = getIcon("format-text-bold.png");
+        ICON_COLORES = getIcon("applications-other.png");
+        ICON_FONDO = getIcon("preferences-desktop-screensaver.png");
+        ICON_MODO = getIcon("view-fullscreen.png");
+        ICON_CONFIG = getIcon("preferences-desktop.png");
+        ICON_CALENDARIO = getIcon("office-calendar.png");
+        ICON_IMPRESORA = getIcon("printer.png");
+        ICON_BLOQUEADO = getIcon("emblem-readonly.png");
+        ICON_START = getIcon("start.png");
+        ICON_LOGIN = getIcon("system-lock-screen.png");
+        ICON_WARNING = getIcon("dialog-warning.png");
+        ICON_EXIT = getIcon("exit.png");
+        ICON_NUEVA = getIcon("new.png");
+        ICON_BUSCAR = getIcon("folder.png");
+        ICON_IMPRIMIR = getIcon("printer.png");
+        ICON_ABONAR = getIcon("pay.png");
+        ICON_ANULAR = getIcon("cancel.png");
+        ICON_ULTIMA = getIcon("go-last.png");
+        ICON_ANTERIOR = getIcon("go-previous.png");
+        ICON_SIGUIENTE = getIcon("go-next.png");
+        ICON_PRODUCTOS = getIcon("dolar.png");
+        ICON_REPORTES = getIcon("reportes.png");
+        ICON_FACTURAS = getIcon("documentos.png");
+        ICON_CHECK = getIcon("check.gif");
+        try {
+            IMG_SENU = getImage("senu.png");
+            IMG_PRINT = getImage("printer.png");
+            IMG_MONITOR = getImage("monitor.png");
+            IMG_USUARIO = getImage("system-users.png");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}

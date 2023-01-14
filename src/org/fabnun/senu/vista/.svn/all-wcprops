@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/vista
+END
+FocusInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/vista/FocusInterface.java
+END
+Escritorio.form
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/senu/!svn/ver/9/trunk/Senu/src/org/fabnun/senu/vista/Escritorio.form
+END
+AbstractSplashScreenLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/senu/!svn/ver/3/trunk/Senu/src/org/fabnun/senu/vista/AbstractSplashScreenLoader.java
+END
+QueryPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/senu/!svn/ver/5/trunk/Senu/src/org/fabnun/senu/vista/QueryPanel.form
+END
+Configuracion.form
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/vista/Configuracion.form
+END
+AdminPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/senu/!svn/ver/3/trunk/Senu/src/org/fabnun/senu/vista/AdminPanel.java
+END
+ButtonColor.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/senu/!svn/ver/13/trunk/Senu/src/org/fabnun/senu/vista/ButtonColor.java
+END
+Escritorio.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/vista/Escritorio.java
+END
+AutoCompleter.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/vista/AutoCompleter.java
+END
+TextFormater.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/senu/!svn/ver/17/trunk/Senu/src/org/fabnun/senu/vista/TextFormater.java
+END
+QueryPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/senu/!svn/ver/5/trunk/Senu/src/org/fabnun/senu/vista/QueryPanel.java
+END
+MyCellRender.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/vista/MyCellRender.java
+END
+Configuracion.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/senu/!svn/ver/21/trunk/Senu/src/org/fabnun/senu/vista/Configuracion.java
+END
+AdminPanel.form
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/senu/!svn/ver/3/trunk/Senu/src/org/fabnun/senu/vista/AdminPanel.form
+END
+MyToolkit.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/senu/!svn/ver/3/trunk/Senu/src/org/fabnun/senu/vista/MyToolkit.java
+END
+MyCellEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/senu/!svn/ver/20/trunk/Senu/src/org/fabnun/senu/vista/MyCellEditor.java
+END

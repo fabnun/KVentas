@@ -1,0 +1,128 @@
+package org.fabnun.senu;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.io.Serializable;
+import java.util.HashMap;
+
+public class PrintModel implements Serializable {
+
+    private static final long serialVersionUID = 10;
+    String url = "";
+    String url2 = "";
+    String code = "";
+    transient HashMap<String, String> values;
+
+    public void setValue(String key, String value) {
+        if (values == null) {
+            values = new HashMap<String, String>();
+        }
+        values.put(key, value);
+    }
+
+    public String normalize(String string, int[] spaces, boolean rigth) {
+        if (spaces.length == 0) {
+            return string;
+        } else if (spaces.length == 2) {
+            return string.substring(spaces[0], spaces[1]);
+        }
+        StringBuilder sb = new StringBuilder();
+        int len = string.length();
+        if (len > spaces[0]) {
+            string = string.substring(0, Math.max(len, spaces[0]));
+        } else if (len < spaces[0]) {
+            if (rigth) {
+                for (int i = 0; i < spaces[0] - len; i++) {
+                    sb.append(" ");
+                }
+                sb.append(string);
+            } else {
+                sb.append(string);
+                for (int i = 0; i < spaces[0] - len; i++) {
+                    sb.append(" ");
+                }
+            }
+        } else {
+            sb.append(string);
+        }
+        return sb.toString();
+    }
+
+    public void printReport(String texto) throws FileNotFoundException, IOException {
+        FileOutputStream fos = new FileOutputStream(url2);
+        PrintStream ps = new PrintStream(fos);
+        for (int i = 0; i < texto.length(); i++) {
+            ps.append(texto.charAt(i));
+        }
+        ps.close();
+        fos.close();
+    }
+
+    public void print() throws Exception {
+        String[] lines = code.split("\n");
+        String[] codes;
+        int[] spaces = new int[0];
+        int linea = 0;
+        StringBuilder sb = new StringBuilder();
+        String replace = "";
+        boolean menos = false;
+        String sps = "";
+        for (String line : lines) {
+            linea++;
+            if (line.trim().length() > 0) {
+                codes = line.split(",");
+                for (String cod : codes) {
+                    if (cod.matches("-?\\w(\\w|\\d)*\\((\\d+(;\\d+)*)?\\)")) {
+                        if (cod.startsWith("-")) {
+                            menos = true;
+                            cod = cod.substring(1);
+                        } else {
+                            menos = false;
+                        }
+                        sps = cod.substring(cod.indexOf("(") + 1, cod.length() - 1).trim();
+                        String[] sp = new String[0];
+                        if (sps.length() > 0) {
+                            sp = sps.split(";");
+                        }
+                        spaces = new int[sp.length];
+                        for (int i = 0; i < sp.length; i++) {
+                            spaces[i] = new Integer(sp[i]);
+                        }
+                        cod = cod.substring(0, cod.indexOf("("));
+                        if (cod.toLowerCase().equals("chr")) {
+                            sb.append((char) spaces[0]);
+                        } else {
+                            replace = values.get(cod);
+                            if (replace == null) {
+                                replace = "";
+                            }
+                            replace = normalize(replace, spaces, menos);
+                            sb.append(replace);
+                        }
+                    } else {
+                        sb.append(line);
+                    }
+                }
+            } else {
+                sb.append(" ");
+            }
+            sb.append("\n\r");
+        }
+        String imp = sb.toString().toUpperCase();
+        imp = imp.replaceAll("Ñ", "N");
+        imp = imp.replaceAll("Á", "A");
+        imp = imp.replaceAll("É", "E");
+        imp = imp.replaceAll("Í", "I");
+        imp = imp.replaceAll("Ó", "O");
+        imp = imp.replaceAll("Ú", "U");
+        FileOutputStream fos = new FileOutputStream(url);
+        PrintStream ps = new PrintStream(fos);
+        for (int i = 0; i < sb.length(); i++) {
+            ps.append(imp.charAt(i));
+        }
+        ps.close();
+        fos.close();
+    }
+}

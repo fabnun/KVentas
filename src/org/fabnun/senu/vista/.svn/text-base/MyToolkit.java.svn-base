@@ -1,0 +1,18 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.fabnun.senu.vista;
+
+/**
+ *
+ * @author fabnun
+ */
+public class MyToolkit extends sun.awt.windows.WToolkit {
+
+    @Override
+    public void beep() {
+    }
+
+
+}

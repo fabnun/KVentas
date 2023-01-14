@@ -1,0 +1,235 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.fabnun.senu.base;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import org.apache.commons.dbcp.BasicDataSource;
+import org.fabnun.senu.ObjectArray;
+
+public abstract class DBManager {
+
+    public byte[] serializable2Byte(Serializable serializable) throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(serializable);
+        byte[] bytes = baos.toByteArray();
+        oos.close();
+        baos.close();
+        return bytes;
+    }
+
+    public Object byte2Serializable(byte[] bytes) throws IOException, ClassNotFoundException {
+        if (bytes == null) {
+            return null;
+        }
+        ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+        ObjectInputStream ois = new ObjectInputStream(bais);
+        Object obj = ois.readObject();
+        ois.close();
+        bais.close();
+        return obj;
+    }
+
+    public Object getObject(String key) {
+        try {
+            FileInputStream fis = new FileInputStream(key + ".obj");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            Object obj = ois.readObject();
+            ois.close();
+            fis.close();
+            return obj;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public void setObject(String key, Serializable object) throws IOException {
+        FileOutputStream fos = new FileOutputStream(key + ".obj");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(object);
+        oos.close();
+        fos.close();
+    }
+
+    public void delObject(String key) throws SQLException {
+        executeUpdate("delete from variable where id='" + key + "'");
+    }
+    protected BasicDataSource ds = null;
+
+    public abstract String creationScript();
+
+    public void executeCreationScript() throws SQLException {
+        String sql = creationScript();
+        //System.out.println(sql);
+        Statement stmt = createStetement();
+        stmt.execute(sql);
+    }
+
+    public ResultSet executeQuery(String sql) throws SQLException {
+        Statement stmt = createStetement();
+        //System.out.println(sql);
+        return stmt.executeQuery(sql);
+    }
+
+    public LinkedList<ObjectArray> executeQueryList(String sql) throws SQLException {
+        Statement stmt = createStetement();
+        //System.out.println(sql);
+        ResultSet rs = stmt.executeQuery(sql);
+        int cols = rs.getMetaData().getColumnCount();
+        Object[] obj;
+        LinkedList<ObjectArray> list = new LinkedList<ObjectArray>();
+        while (rs.next()) {
+            obj = new Object[cols];
+            for (int i = 0; i < cols; i++) {
+                obj[i] = rs.getObject(i + 1);
+            }
+            list.add(new ObjectArray(obj));
+        }
+        closeResultSetAndStatement(rs);
+        return list;
+    }
+
+    public DBManager(String driver, String user, String pass, String[] url) {
+        this(driver, user, pass, url, null);
+    }
+
+    public DBManager(String driver, String user, String pass, String[] url, String props) {
+        boolean ok = false;
+        int idx=0;
+        do {
+            ds = new BasicDataSource();
+            ds.setDriverClassName(driver);
+            ds.setUsername(user);
+            ds.setPassword(pass);
+            ds.setUrl(url[idx]);
+            if (props != null) {
+                ds.setConnectionProperties(props);
+            }
+            try {
+                Connection conn=ds.getConnection();
+                ok=true;
+                conn.close();
+            } catch (Exception e) {
+                System.err.println("No se pudo conectar con "+url[idx]);
+            }
+            idx++;
+        } while (idx<url.length && !ok);
+    }
+
+    public Statement createStetement() throws SQLException {
+        return ds.getConnection().createStatement();
+    }
+
+    public Connection getConnection() throws SQLException {
+        return ds.getConnection();
+    }
+
+    public void closeStatement(Statement stmt) throws SQLException {
+        Connection conn = stmt.getConnection();
+        stmt.close();
+        conn.close();
+    }
+
+    public void closeResultSetAndStatement(ResultSet rs) throws SQLException {
+        Statement stmt = rs.getStatement();
+        rs.close();
+        Connection conn = stmt.getConnection();
+        stmt.close();
+        conn.close();
+    }
+
+    public PreparedStatement createPreparedStatement(Connection conn, String sql) throws SQLException {
+        return conn.prepareStatement(sql);
+    }
+
+    public int executeUpdate(String sql) throws SQLException {
+        Statement stmt = createStetement();
+        //System.out.println(sql);
+        int updates = stmt.executeUpdate(sql);
+        closeStatement(stmt);
+        return updates;
+    }
+
+    public LinkedList<ObjectArray> executePreparedStatementQueryList(PreparedStatement pstmt, Object... objs) throws SQLException {
+        ResultSet rs = executePreparedStatementQuery(pstmt, objs);
+        int cols = rs.getMetaData().getColumnCount();
+        Object[] obj;
+        LinkedList<ObjectArray> list = new LinkedList<ObjectArray>();
+        while (rs.next()) {
+            obj = new Object[cols];
+            for (int i = 0; i < cols; i++) {
+                obj[i] = rs.getObject(i + 1);
+            }
+            list.add(new ObjectArray(obj));
+        }
+        rs.close();
+        return list;
+    }
+
+    public Object[] executeFirstQuery(String sql) throws SQLException {
+        //System.out.println(sql);
+        Statement stmt = createStetement();
+        ResultSet rs = stmt.executeQuery(sql);
+        if (rs.next()) {
+            ResultSetMetaData rsmd = (ResultSetMetaData) rs.getMetaData();
+            Object objs[] = new Object[rsmd.getColumnCount()];
+            for (int i = 0; i < objs.length; i++) {
+                objs[i] = rs.getObject(i + 1);
+            }
+            closeResultSetAndStatement(rs);
+            return objs;
+        } else {
+            closeResultSetAndStatement(rs);
+            return null;
+        }
+    }
+
+    public ResultSet executePreparedStatementQuery(PreparedStatement pstmt, Object... obj) throws SQLException {
+        for (int i = 0; i < obj.length; i++) {
+            pstmt.setObject(i + 1, obj[i]);
+        }
+        //System.out.println(pstmt.toString());
+        return pstmt.executeQuery();
+    }
+
+    public Object[] executeFirstPreparedStatementQuery(PreparedStatement pstmt, Object... obj) throws SQLException {
+        ResultSet rs = executePreparedStatementQuery(pstmt, obj);
+        if (rs.next()) {
+            ResultSetMetaData rsmd = (ResultSetMetaData) rs.getMetaData();
+            Object objs[] = new Object[rsmd.getColumnCount()];
+            for (int i = 0; i < objs.length; i++) {
+                objs[i] = rs.getObject(i + 1);
+            }
+            rs.close();
+            return objs;
+        } else {
+            rs.close();
+            return null;
+        }
+    }
+
+    public int executePreparedStatementUpdate(PreparedStatement pstmt, Object... obj) throws SQLException {
+        for (int i = 0; i < obj.length; i++) {
+            pstmt.setObject(i + 1, obj[i]);
+        }
+        //System.out.println(pstmt.toString());
+        return pstmt.executeUpdate();
+    }
+}
